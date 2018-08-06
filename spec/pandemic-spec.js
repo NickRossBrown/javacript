@@ -45,10 +45,16 @@ describe('Pandemic', function () {
   });
 
   it('should show all the cities health', function() {
-    syphillis.cities.Portland = 3
     syphillis.getCitiesStatus()
     expect(syphillis.outbreakCounter).toEqual(2);
   });
+
+  // it('should spread an infection from one city to another if one city has below 6 health', function() {
+  //   let syphillis2 = new Pandemic("Syphillis");
+  //   syphillis2.cities.Portland = 3
+  //   syphillis2.infectionSpread1()
+  //   expect(syphillis2.outbreakCounter).toEqual(2);
+  // });
 
 
 })

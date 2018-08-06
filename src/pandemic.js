@@ -11,12 +11,6 @@ export class Pandemic {
     }, 30000)
   }
 
-  // setOutbreak() {
-  //   setInterval(() => {
-  //     this.cities.Portland -=3;
-  //   })
-  // }
-
   cureOutbreak() {
     this.outbreakCounter--
   }
@@ -30,26 +24,30 @@ export class Pandemic {
   }
 
   getCitiesStatus() {
-    let i = 0;
-    for (; i < 3 ;) {
-
-
-    }
     for (let key in this.cities) {
       if (this.cities.hasOwnProperty(key)) {
-        console.log(this.cities[key])
-        if (this.cities[key] < 4) {
-          console.log("reached")
-            this.cities[key]-= i;
-            i+=1;
-            console.log( key+"-->"+this.cities[key]);
-          }
-        }
         console.log( key+"-->"+this.cities[key]);
       }
     }
   }
+
+  portlandInfectionSpead(){
+    if (this.cities.Portland >= 6) {
+      break
+    } else if (this.cities.Portland > 4 && this.cities.Portland < 7){
+      this.cities.Salem -= 1
+      this.cities.Corvallis -= 1
+      this.cities.Bend -= 1
+     }
+   } else if (this.cities.Portland > 2 && this.cities.Portland < 5{
+      this.cities.Salem -= 1.5
+      this.cities.Corvallis -= 1.5
+      this.cities.Bend -= 1.5
+     }
+   } else if (this.cities.Portland > 0 && this.cities.Portland < 3{
+      this.cities.Salem -= 2
+      this.cities.Corvallis -= 2
+      this.cities.Bend -= 2
+     }
   }
-
-
 }
